@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "修改信息";
+    ViewBag.Header = "2";
+    ViewBag.HeadTitle = "我的账户";
+    Layout = "/Views/Shared/_layout.cshtml";
+}
+
+<div class="User-updaye-info">
+    <div class="u-update-info fill-cotar">
+        <!-- 信息填写表单 -->
+        <div id="MemberCenterForm" class="fill-form-box">
+            <div class="item fbox">
+                <div class="label">个人头像</div>
+                <div id="user_head_select rf" class="select-content bf1 ic-user-right-arrow">
+                    <span class="pic-wrap imgLiquidFill">
+                        <img src="/Content/Include/img/img-person.jpg">
+                    </span>
+                </div>
+            </div>
+            <div class="item fbox">
+                <div class="label">昵称</div>
+                <div class="ipt-wrap txtr bf1">
+                    <input type="text" class="ipt" placeholder="请填写昵称" mc-name="MName">
+                </div>
+            </div>
+            <div class="item fbox" id="real_name">
+                <div class="label">真实姓名</div>
+                <div class="ipt-wrap txtr bf1">
+                    <input type="text" class="ipt" placeholder="请填写真实姓名" mc-name="MRealName">
+                </div>
+            </div>
+            <div class="item fbox">
+                <div class="label">性别</div>
+                <div class="select-content bf1 ic-user-right-arrow" onclick="selectGender()">
+                    <span class="fp" mc-name="MSex" mc-must="性别">女</span>
+                </div>
+            </div>
+            <div class="item fbox">
+                <div class="label">手机号码</div>
+                <div class="show-content bf1" mc-name="MMobile"></div>
+            </div>
+        </div>
+        <!-- 提交 -->
+        <div class="form-btn-wrap">
+            <div class="btn" id="sct" onclick="submitUpdate()">提交修改</div>
+        </div>
+    </div>
+</div>

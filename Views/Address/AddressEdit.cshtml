@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "添加地址";
+    ViewBag.Header = "2";
+    ViewBag.HeadTitle = "地址管理";
+    Layout = "/Views/Shared/_layout.cshtml";
+}
+
+
+<div class="address-edit-cotar" id="formSubmit">
+    <!-- 地址填写表单 -->
+    <div id="address_fill" class="address-fill-field">
+        <div class="item">
+            <div class="content  " id="cityResult3">
+                <span>请选择地区</span>
+                <!-- P C T Name-->
+                <div type="text" class="  fp" mc-name="PName" mc-must="地区">
+                </div>
+                <div type="text" class="  fp" mc-name="CName" mc-must="地区">
+                </div>
+                <div type="text" class="  fp" mc-name="TName" @*mc-must="地区" 可能无区 *@>
+                </div>
+                <!-- P C T CODE-->
+                <input type="hidden" class="ipt" mc-name="PCode" mc-must="地区">
+                <input type="hidden" class="ipt" mc-name="CCode" mc-must="地区">
+                <input type="hidden" class="ipt" mc-name="TCode" @*mc-must="地区"*@>
+            </div>
+            <div class="label">所在地区</div>
+        </div>
+        <div class="item fill-box mult" mc-ipt-tip="请输入收货地址">
+            <div class="show-cotar">
+                <div class="content" id="MaDetails_text">请输入收货地址</div>
+                <div class="label">收货地址</div>
+            </div>
+            <div class="edit-cotar">
+                <textarea class="mult-ipt fill-ipt" mc-name="MaDetails" mc-must="收货地址"></textarea>
+            </div>
+        </div>
+        <div class="item fill-box" mc-ipt-tip="请输入收货人姓名">
+            <div class="show-cotar">
+                <div class="content" id="MaPerson_text">请输入收货人姓名</div>
+                <div class="label">收货人姓名</div>
+            </div>
+            <div class="edit-cotar">
+                <input type="text" class="ipt fill-ipt" mc-name="MaPerson" mc-must="收货人姓名">
+            </div>
+        </div>
+        <div class="item fill-box" mc-ipt-tip="请输入联系电话">
+            <div class="show-cotar">
+                <div class="content" id="MaTelephone_text">请输入联系电话</div>
+                <div class="label">联系电话</div>
+            </div>
+            <div class="edit-cotar">
+                <input type="text" class="ipt fill-ipt" mc-name="MaTelephone" mc-must="联系电话" mc-type="mobile">
+            </div>
+        </div>
+    </div>
+    <!-- 底部固定工具条 -->
+    <div id="bottom_fixed_bar" class="bottom-fixed-bar">
+        <div class="btn border item" id="del_btn">删&nbsp;&nbsp;除</div>
+        <div class="btn item" id="save_btn">保&nbsp;&nbsp;存</div>
+    </div>
+</div>

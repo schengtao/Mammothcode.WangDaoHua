@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "个人中心";
+    ViewBag.Header = "2";
+    ViewBag.HeadTitle = "个人中心";
+    Layout = "/Views/Shared/_layout.cshtml";
+}
+
+<div class="user-center-cotar main-page">
+    <!-- 用户信息 -->
+    <div id="MemberCenterForm" class="user-info-box" style="background-image:url(/Content/Include/img/img-qr-bg.jpg)">
+        <div class="vm-cotar">
+            <div class="user-head-box">
+                <a href="#" class="pic-wrap imgLiquidFill"><img src="/Content/Include/img/img-person.jpg"></a><br>
+                <div class="user-name" mc-name="MName">王大力</div>
+                <div class="user-name cr" mc-name="MName">1000积分</div>
+            </div>
+        </div>
+
+    </div>
+    <!-- 个人中心导航 -->
+    <div class="uc-nav-list">
+        <a class="item fbox ic-user-mcont ic-user-right-arrow" href="/User/UserUpdayeInfo">
+            <span class="bf1">我的账户</span>
+        </a>
+    </div>
+    <div class="uc-nav-list">
+        <a href="/Address/AddressManage" class="item fbox ic-user-address ic-user-right-arrow"><span class="bf1">地址管理</span></a>
+        <a href="/Product/MyCourseSubscription" class="item fbox ic-user-order ic-user-right-arrow"><span class="bf1">我的课程订阅</span></a>
+    </div>
+</div>

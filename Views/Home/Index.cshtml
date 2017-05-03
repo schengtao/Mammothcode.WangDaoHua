@@ -1,0 +1,159 @@
+﻿@{
+    ViewBag.Title = "首页";
+    ViewBag.Header = "1";
+    ViewBag.Bottom = "1";
+    Layout = "/Views/Shared/_layout.cshtml";
+
+}
+
+<div class="index">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="mid-img">
+                    <img src="/Content/Include/img/img-mid-bg.jpg" />
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="mid-img">
+                    <img src="~/Content/Include/img/img-mid-bg.jpg" />
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="mid-img">
+                    <img src="~/Content/Include/img/img-mid-bg.jpg" />
+                </div>
+            </div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+
+        <!-- 如果需要滚动条 -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+    <div class="course-recommendation">
+        <div class="sorch flex">
+            <div class="ic-right-arrow"></div>
+            <div class="cont-text fg1">课程推荐</div>
+            <a class="look-more" href="/Product/LectureList">查看更多</a>
+        </div>
+        <div class="course-wrap hf">
+            <a class="item fp" href="/Product/LectureDetails">
+                <div class="img-wrap">
+                    <img src="/Content/Include/img/img-class1.jpg" />
+                </div>
+                <div class="text-wrap">
+                    《西方心理学系统讲解》
+                </div>
+            </a>
+            <a class="item fp" href="/Product/LectureDetails">
+                <div class="img-wrap">
+                    <img src="/Content/Include/img/img-class1.jpg" />
+                </div>
+                <div class="text-wrap">
+                    《西方心理学系统讲解》
+                </div>
+            </a>
+            <a class="item fp" href="/Product/LectureDetails">
+                <div class="img-wrap">
+                    <img src="/Content/Include/img/img-class1.jpg" />
+                </div>
+                <div class="text-wrap">
+                    《西方心理学系统讲解》
+                </div>
+            </a>
+            <a class="item fp" href="/Product/LectureDetails">
+                <div class="img-wrap">
+                    <img src="/Content/Include/img/img-class1.jpg" />
+                </div>
+                <div class="text-wrap">
+                    《西方心理学系统讲解》
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="hot-question">
+        <div class="sorch flex">
+            <div class="ic-right-arrow"></div>
+            <div class="cont-text fg1">热门答疑</div>
+            <a class="look-more" href="/Product/QuestionList">查看更多</a>
+        </div>
+        <div class="question-box">
+            <div class="top-ques">王老师,您好!不喜欢现在的工作,要跨行,新领域小白如何才能通过面试?</div>
+            <div class="flex ques-cont">
+                <div class="person">
+                    <div class="img-wrap">
+                        <img src="/Content/Include/img/img-person.jpg" />
+                    </div>
+                    <div class="person-text">王先生</div>
+                </div>
+                <div class="fg1">
+                    <a class="bt-box br" href="/Product/QuestionDetails">订阅付费5看回答</a>
+                    <a class="bt-box -bg" href="/Product/QuestionDetails">点击查看>></a>
+                </div>
+                <div class="eye-box hf">
+                    <div class="ic-eye fp"></div>
+                    <div class="eye-number fp">100</div>
+                </div>
+            </div>
+        </div>
+        <div class="question-box">
+            <div class="top-ques">王老师,您好!不喜欢现在的工作,要跨行,新领域小白如何才能通过面试?</div>
+            <div class="flex ques-cont">
+                <div class="person">
+                    <div class="img-wrap">
+                        <img src="/Content/Include/img/img-person.jpg" />
+                    </div>
+                    <div class="person-text">王先生</div>
+                </div>
+                <div class="fg1">
+                    <a class="bt-box br" href="/Product/QuestionDetails">订阅付费5看回答</a>
+                    <a class="bt-box -bg" href="/Product/QuestionDetails">点击查看>></a>
+                </div>
+                <div class="eye-box hf">
+                    <div class="ic-eye fp"></div>
+                    <div class="eye-number fp">100</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="which-like">
+        <div class="sorch flex">
+            <div class="ic-right-arrow"></div>
+            <div class="cont-text fg1">猜你喜欢</div>
+            <a class="look-more" href="/Product/AudioList">查看更多</a>
+        </div>
+        <div class="like-item fbox">
+            <div class="img-wrap">
+                <img src="/Content/Include/img/img-like.jpg" />
+            </div>
+            <div class="like-intrduce bf1">
+                <div class="fir-text">本周书法</div>
+                <div class="sec-text">简单描述:书法是一门学问,练习书法是,练习书法,练习书法</div>
+                <div class="rf-text flex">
+                    <div class="fg1 bt">
+                        <span>99.00</span>
+                        1000人收听
+                    </div>
+                    <a href="/Product/AudioList" class="bt-box change">收听</a>
+                </div>
+            </div>
+        </div>
+        <div class="like-item fbox">
+            <div class="img-wrap">
+                <img src="/Content/Include/img/img-like.jpg" />
+            </div>
+            <div class="like-intrduce bf1">
+                <div class="fir-text">本周书法</div>
+                <div class="sec-text">简单描述:书法是一门学问,练习书法是,练习书法,练习书法</div>
+                <div class="rf-text flex">
+                    <div class="fg1 bt">
+                        <span>99.00</span>
+                        1000人收听
+                    </div>
+                    <a class="bt-box change">收听</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

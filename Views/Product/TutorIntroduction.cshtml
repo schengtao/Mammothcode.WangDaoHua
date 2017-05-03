@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "导师介绍";
+    ViewBag.Header = "2";
+    ViewBag.HeadTitle = "导师介绍";
+    ViewBag.Bottom = "1";
+    Layout = "/Views/Shared/_layout.cshtml";
+}
+
+<div class="tutor-introduction">
+    <div class="swiper-bg">
+        <img src="/Content/Include/img/img-mid-bg2.jpg" />
+    </div>
+
+    <div id="accordion">
+        <h3>汪云忠</h3>
+        <div>
+            <p>
+                心理咨询师，致力于中西医结合临床研究与治疗30余年，精通中医医学辨证施治理论，在各种精神心理、认知行为治疗、心理障碍疾病具有扎实的理论基础和丰富的临床实践经验。致力于祖国医学诊疗理论，并与现代临床实践完美结合，不断发展和完善各类诊疗方法，是率先运用NAK-1神经元激活体系治疗顽固性失眠、抑郁、神经衰弱、精神分裂症、头痛头晕、更年期综合症等各类精神疾病的主治医师
+            </p>
+            <br />
+            <div class="ic-user-phone">
+                联系方式:0571-87097702
+            </div>
+        </div>
+        <h3>周安义</h3>
+        <div>
+            <p>
+                1975年毕业于湖北中医药大学，曾在苏州协和医院工作，现任宝善堂神经内科主治医师。长期致力于神经内科疾病的临床诊疗工作，拥有30多年临床诊疗经验，掌握各地的先进治疗方法和治疗理念，为宝善堂走向“专病、专业、专治”的“中西医结合治精神疾病”的专业之路打下了坚实的基础，特别擅长精神心理疾病科学检查与辨证治疗，因为深刻洞悉患者的病态心理而深得患者家属的拥戴
+            </p>
+            <br />
+            <div class="ic-user-phone">
+                联系方式:0571-87097702
+            </div>
+        </div>
+        <h3>陆建华</h3>
+        <div>
+            <p>
+                华东师范大学心理学研修生，浙江心理卫生协会心理咨询与治疗专业委员会精神分析学组副组长，美国催眠师学会和德国催眠治疗师协会授证催眠治疗师，国家认证执业心理咨询师（证书编号：0403000100202350）。 2001-2004年在上海华东师范大学学习心理咨询理论和实践，并参与华东师范大学心理咨询工作室的创立，2005年回杭州创办杭州首家专业心理咨询中心
+            </p>
+            <br />
+            <div class="ic-user-phone">
+                联系方式:0571-85091972
+            </div>
+        </div>
+        <h3>孙晴</h3>
+        <div>
+            <p>
+                国家认证二级心理咨询师（证书编号：0611000008200251）
+                浙江大学应用心理学硕士，美国团体心理治疗协会会员（AGPA），中国心理卫生协会会员，杭州市青少年生殖健康热线心理咨询师，杭州市科普作家协会会员，“西湖之声”电台特聘心理顾问，西湖之声“星座夜话”心理栏目嘉宾主持 ， 数家媒体心理栏目的特约专家，灵栖专职心理咨询师。
+            </p>
+            <br />
+            <div class="ic-user-phone">
+                联系方式:0571-85091972
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+<script>
+    $(function () {
+        var icons = {
+            header: "ui-icon-circle-arrow-e",
+            activeHeader: "ui-icon-circle-arrow-s"
+        };
+        $("#accordion").accordion({
+            icons: icons
+        });
+        $("#toggle").button().click(function () {
+            if ($("#accordion").accordion("option", "icons")) {
+                $("#accordion").accordion("option", "icons", null);
+            } else {
+                $("#accordion").accordion("option", "icons", icons);
+            }
+        });
+    });
+</script>

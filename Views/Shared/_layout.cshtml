@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+    <title>@ViewBag.Title</title>
+    <!--主样式文件-->
+    <link href="/Content/Include/css/Main.min.css" rel="stylesheet" />
+    <!--JQuery-->
+    <script src="/Content/Include/js/jquery-1.8.3.min.js"></script>
+    <!-- underscore -->
+    <script src="/Content/Include/js/underscore-min.js"></script>
+    <!-- json2 -->
+    <script src="~/Content/Include/js/json2.js"></script>
+    <!-- artTemplate -->
+    <script src="/Content/Include/js/template.js"></script>
+    <!-- 曼码JsLib -->
+    <script src="/Content/Include/js/mammothcodeJsLib.min.js"></script>
+    <!-- Mc Verify -->
+    <script src="/Content/Include/js/mc.verify.js"></script>
+    <!-- picker css -->
+    <link href="/Content/Include/js/lib/picker/css/mui.picker.all.css" rel="stylesheet" />
+    <!-- picker js -->
+    <script src="/Content/Include/js/lib/picker/mui.min.js"></script>
+    <script src="/Content/Include/js/lib/picker/js/mui.picker.all.js"></script>
+    <script src="/Content/Include/js/lib/picker/city.data-3.min.js"></script>
+    <!-- Common Js -->
+    <script src="/Content/Include/js/Common.min.js"></script>
+    <!-- mc.upload -->
+    <link href="/Content/Include/js/lib/mc.upload/webuploader.css" rel="stylesheet" />
+    <script src="/Content/Include/js/lib/mc.upload/webuploader-0.1.5/webuploader.html5only.min.js"></script>
+    <script src="/Content/Include/js/lib/mc.upload/webuploader-0.1.5/webuploader.min.js"></script>
+    <script src="/Content/Include/js/lib/mc.upload/mc.uploader.js"></script>
+    <!-- swiper -->
+    <link href="/Content/Include/css/swiper-3.3.1.min.css" rel="stylesheet" />
+    <script src="/Content/Include/js/swiper-3.3.1.jquery.min.js"></script>
+    <!-- jquery UI -->
+    <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+    <script src="//apps.bdimg.com/libs/jquery/1.10.d2/jquery.min.js"></script>
+    <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="jqueryui/style.css">
+    <!-- lazyload -->
+    @*<script src="/Content/include/js/jquery.lazyload.min.js"></script>*@
+    <script type="text/javascript">
+        //页面返回按钮函数钩子
+        var gPageReturnHook = null;
+        //返回
+        function goBack() {
+            //IE 的判断为 history.length > 0
+            //Firefox, Safari, Chrome, webkit 的判断为 history.length > 1
+            //微信中实测为 history.length > 1
+            if (history.length > 1) {
+                history.go(-1)
+            } else {
+                urlJump("/")
+            }
+        }
+        //点击返回按钮
+        function doBack() {
+            if (typeof gPageReturnHook === "function") {
+                gPageReturnHook();
+            } else {
+                goBack();
+            }
+        }
+    </script>
+    <style id="html_style"></style>
+    <script type="text/javascript">
+        (calMinHeight = function () {
+            var wh = $(window).height();
+            var styleString = "";
+            styleString += ".min-height-cotar{min-height:" + wh + "px}";
+            styleString += ".height-cotar{height:" + wh + "px}";
+            var htmlStyle = $("#html_style")[0];
+            if ('styleSheet' in htmlStyle) {
+                htmlStyle.setAttribute('type', 'text/css');
+                htmlStyle.styleSheet.cssText = styleString;
+            } else {
+                htmlStyle.innerHTML = styleString;
+            }
+        })();
+        $(window).on("resize", function () {
+            calMinHeight();
+        });
+    </script>
+    <link rel="stylesheet" href="/Content/Include/css/swiper-3.4.2.min.css">
+</head>
+<body id="body">
+    @if (ViewBag.Header == "1")
+    {
+        <div class="header flex">
+            <a class="header-item fg1" href="/Product/IntegralMall">
+                <div class="ic-header-shop"></div>
+                <div class="header-text">商城</div>
+            </a>
+            <a class="header-item fg1" href="/Product/TutorIntroduction">
+                <div class="ic-header-teacher"></div>
+                <div class="header-text">名师</div>
+            </a>
+            <a class="header-item fg1" href="/">
+                <div class="ic-header-center"></div>
+            </a>
+            <a class="header-item fg1" href="/Product/NewsList">
+                <div class="ic-header-platform"></div>
+                <div class="header-text">健康知识</div>
+            </a>
+            <a class="header-item fg1" href="/">
+                <div class="ic-header-link"></div>
+                <div class="header-text">友情链接</div>
+            </a>
+        </div>
+    }
+    else if (ViewBag.Header == "2")
+    {
+        <div class="top flex">
+            <div class="side-wrap">
+                <div class="ic-return" onclick="doBack()"></div>
+            </div>
+            <div class="text-wrap fg1">@ViewBag.HeadTitle</div>
+            <div class="side-wrap"></div>
+        </div>
+    }
+
+    <div class="wrap">
+        @RenderBody()
+    </div>
+    @if (ViewBag.Bottom == "1")
+    {
+        <div class="bottom1 flex">
+            <a class="bor fg1" href="/">
+                <div class="bottom-item active">
+                    <div class="ic-bottom-index active"></div>
+                    <div class="bottom-text">首页</div>
+                </div>
+            </a>
+            <a class="bor fg1" href="/Product/LectureList">
+                <div class="bottom-item">
+                    <div class="ic-bottom-class"></div>
+                    <div class="bottom-text">讲座</div>
+                </div>
+            </a>
+            <a class="bor fg1" href="/Product/QuestionList">
+                <div class="bottom-item">
+                    <div class="ic-bottom-ask"></div>
+                    <div class="ic-bottom-text">案例</div>
+                </div>
+            </a>
+            <a class="fg1" href="/User/UserCenter">
+                <div class="bottom-item">
+                    <div class="ic-bottom-mine"></div>
+                    <div class="bottom-text">我的</div>
+                </div>
+            </a>
+
+
+        </div>
+    }
+    else if (ViewBag.Bottom == "2")
+    {
+        <div class="bottom2 flex">
+            <a href="/User/ReviewPlate" class="item bor">
+                <div class="ic-wrap">
+                    <div class="ic-bottom2-ask"></div>
+                </div>
+                <div class="text-wrap">评论</div>
+            </a>
+            <a class="item bor">
+                <div class="ic-wrap">
+                    <div class="ic-bottom2-start"></div>
+                </div>
+                <div class="text-wrap">打赏</div>
+            </a>
+            <a href="/Address/ConfirmOrder" class="item active">
+                <div class="ic-wrap">
+                    <div class="ic-bottom2-shop active"></div>
+                </div>
+                <div class="text-wrap">订阅购买</div>
+            </a>
+        </div>
+    }
+    else if (ViewBag.Bottom == "3")
+    {
+        <div class="bottom3 flex">
+            <div class="item fg1 bor">单价:200积分</div>
+            <a class="item fg1 active" href="/Product/IntegralMall">立即兑换</a>
+        </div>
+    }
+    <script src="/Content/Include/js/swiper-3.4.2.min.js"></script>
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            
+            loop: true,
+
+            // 如果需要分页器
+            pagination: '.swiper-pagination',
+
+            // 如果需要滚动条
+            scrollbar: '.swiper-scrollbar',
+        })
+    </script>
+</body>
+
+</html>
+
+
